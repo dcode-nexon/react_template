@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# 리액트 프로젝트 생성
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 최신버전의 리액트 프로젝트 생성
 
-## Available Scripts
+```js
+npx create-react-app 프로젝트이름
+```
 
-In the project directory, you can run:
+## 17버전으로 다운그레이드 하기
 
-### `npm start`
+vscode에서 터미널을 열고 다음과 같이 react, react-dom을 17버전으로 재설치
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```js
+npm i react@17 react-dom@17 --save
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 리액트 라우터는 5버전대 설치
 
-### `npm test`
+vscode에서 터미널을 열고 다음과 같이 react-router-dom을 5버전으로 재설치
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+npm i react-router-dom@5 --save
+```
 
-### `npm run build`
+## sass 설치
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+vscode에서 터미널 열고 다음의 명령어로 sass 설치
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```js
+npm i sass --save
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+# 리액트 프로젝트 폴더 정리
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 다음의 이미지와 같이 불필요한 파일 삭제
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![폴더구조](https://cafeptthumb-phinf.pstatic.net/MjAyMjA1MDJfMTE2/MDAxNjUxNDc2OTg2OTY0.kegR8AAuOOLZvUQwq3v1KnmjrgTi3f67Es8_R58wxeYg.NT3ze0yKW9Rt00rhG2ENttvRg40I-wY6QIL6COnMe4Eg.PNG/image.png?type=w1600)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 각 파일 코드 수정
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+public 폴더 안쪽의 index.html 다음과 같이 수정
 
-## Learn More
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>React App</title>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+	</body>
+</html>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+src 폴더 안쪽의 index.js 다음과 같이 수정
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { HashRouter } from 'react-router-dom';
 
-### Code Splitting
+ReactDOM.render(
+	<React.StrictMode>
+		<HashRouter>
+			<App />
+		</HashRouter>
+	</React.StrictMode>,
+	document.getElementById('root')
+);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+src 폴더 안쪽의 App.js 다음과 같이 수정
 
-### Analyzing the Bundle Size
+```js
+function App() {
+	return (
+		<div className='App'>
+			<h1>React Template Complete</h1>
+		</div>
+	);
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default App;
+```
