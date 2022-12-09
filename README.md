@@ -28,7 +28,7 @@ npm i sass --save
 
 # 리액트 프로젝트 폴더 정리
 
-다음의 이미지와 같이 불필요한 파일 삭제
+다음의 이미지와 같이 불필요한 파일 삭제</br>
 ![폴더구조](https://cafeptthumb-phinf.pstatic.net/MjAyMjA1MDJfMTE2/MDAxNjUxNDc2OTg2OTY0.kegR8AAuOOLZvUQwq3v1KnmjrgTi3f67Es8_R58wxeYg.NT3ze0yKW9Rt00rhG2ENttvRg40I-wY6QIL6COnMe4Eg.PNG/image.png?type=w1600)
 
 public 폴더 안쪽의 index.html 다음과 같이 수정
